@@ -1,0 +1,79 @@
+﻿@model LearningApp.Models.Departments
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Departments</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="short_name" class="control-label"></label>
+                <input asp-for="short_name" class="form-control" />
+                <span asp-validation-for="short_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="code" class="control-label"></label>
+                <input asp-for="code" class="form-control" />
+                <span asp-validation-for="code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createBy" class="control-label"></label>
+                <input asp-for="createBy" class="form-control" />
+                <span asp-validation-for="createBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="createAt" class="control-label"></label>
+                <input asp-for="createAt" class="form-control" />
+                <span asp-validation-for="createAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updateBy" class="control-label"></label>
+                <input asp-for="updateBy" class="form-control" />
+                <span asp-validation-for="updateBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updateAt" class="control-label"></label>
+                <input asp-for="updateAt" class="form-control" />
+                <span asp-validation-for="updateAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deleteBy" class="control-label"></label>
+                <input asp-for="deleteBy" class="form-control" />
+                <span asp-validation-for="deleteBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="deleteAt" class="control-label"></label>
+                <input asp-for="deleteAt" class="form-control" />
+                <span asp-validation-for="deleteAt" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="isDEleted" /> @Html.DisplayNameFor(model => model.isDEleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
